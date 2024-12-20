@@ -13,7 +13,7 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeController>(
-      init: HomeController(Get.find(), Get.find()),
+      init: HomeController(Get.find(), Get.find(), Get.find()),
       builder: (_) {
         return Scaffold(
           backgroundColor: AppColors.backgroundColor,

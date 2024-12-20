@@ -30,9 +30,9 @@ class GenreWidget extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      //GenreEntity genre = controller.state.genreList[index];
-                      // controller.setSelectedGenre(genre.id ?? 28);
-                      //controller.getNowPlayingMovie(genre.id ?? 28);
+                      GenreEntity genre = controller.state.genreList[index];
+                      controller.setSelectedGenre(genre.id ?? 28);
+                      controller.getMovieByGenre(genre.id ?? 28);
                     },
                     child: Obx(
                       () => Container(
