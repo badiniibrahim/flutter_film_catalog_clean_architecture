@@ -21,7 +21,7 @@ class GenreApi extends APIRequestRepresentable {
 
   @override
   String get path =>
-      "/genre/movie/list?api_key=${dotenv.env['API_KEY']}&language=fr";
+      "/genre/movie/list?api_key=${dotenv.env['API_KEY']}&language=en";
 
   @override
   Map<String, String>? get query => null;

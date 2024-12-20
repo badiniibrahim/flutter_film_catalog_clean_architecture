@@ -52,7 +52,7 @@ class GenreWidget extends StatelessWidget {
                         child: Text(
                           genre.name?.toUpperCase() ?? "",
                           style: TextStyle(
-                            fontSize: 12,
+                            fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: (genre.id == controller.state.selectedGenre)
                                 ? Colors.white

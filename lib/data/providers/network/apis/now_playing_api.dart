@@ -21,7 +21,7 @@ class NowPlayingApi extends APIRequestRepresentable {
 
   @override
   String get path =>
-      "/movie/popular?api_key=${dotenv.env['API_KEY']}&language=fr";
+      "/movie/popular?api_key=${dotenv.env['API_KEY']}&language=en";
 
   @override
   Map<String, String>? get query => null;
