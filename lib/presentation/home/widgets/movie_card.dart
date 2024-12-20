@@ -1,4 +1,5 @@
 import 'package:film_catalog/domain/entities/movie_entity.dart';
+import 'package:film_catalog/presentation/home/widgets/vote_average.dart';
 import 'package:flutter/material.dart';
 
 class MovieCard extends StatelessWidget {
@@ -75,7 +76,7 @@ class MovieCard extends StatelessWidget {
                             TextSpan(
                               children: [
                                 TextSpan(
-                                  text: "Vote Count ",
+                                  text: "Vote Count : ",
                                   style: TextStyle(
                                     fontSize: 14,
                                     fontFamily: 'muli',
@@ -96,7 +97,7 @@ class MovieCard extends StatelessWidget {
                         ),
                         const Spacer(),
                         Container(
-                          padding: const EdgeInsets.all(10),
+                          padding: const EdgeInsets.all(1),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: Colors.blue.shade50,
@@ -109,6 +110,7 @@ class MovieCard extends StatelessWidget {
                         ),
                       ],
                     ),
+                    VoteAverage(movie: movie),
                     const SizedBox(height: 10),
                   ],
                 ),
