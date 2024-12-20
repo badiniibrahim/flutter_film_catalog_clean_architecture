@@ -15,7 +15,8 @@ class GenreWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(() => SizedBox(
-          height: 45,
+          width: MediaQuery.of(context).size.width,
+          height: 40,
           child: ListView.separated(
             separatorBuilder: (BuildContext context, int index) =>
                 const VerticalDivider(
@@ -26,7 +27,9 @@ class GenreWidget extends StatelessWidget {
             itemCount: controller.state.genreList.length,
             itemBuilder: (context, index) {
               GenreEntity genre = controller.state.genreList[index];
+
               return Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   GestureDetector(
                     onTap: () {
@@ -36,7 +39,7 @@ class GenreWidget extends StatelessWidget {
                     },
                     child: Obx(
                       () => Container(
-                        padding: const EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(9),
                         decoration: BoxDecoration(
                           border: Border.all(
                             color: Colors.black,
@@ -44,15 +47,14 @@ class GenreWidget extends StatelessWidget {
                           borderRadius: const BorderRadius.all(
                             Radius.circular(25),
                           ),
-                          color: (genre.id ==
-                                  controller.state.selectedGenre) //28 Action
+                          color: (genre.id == controller.state.selectedGenre)
                               ? Colors.yellow[800]
                               : Colors.white,
                         ),
                         child: Text(
                           genre.name?.toUpperCase() ?? "",
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: (genre.id == controller.state.selectedGenre)
                                 ? Colors.white

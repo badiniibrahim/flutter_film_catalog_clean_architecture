@@ -10,10 +10,6 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: "FilmCatalog",
-      supportedLocales: const [
-        Locale("fr"),
-        Locale("en"),
-      ],
       // themeMode: ThemeMode.system,
       themeMode: ThemeMode.light,
       theme: ThemeData.light(useMaterial3: true),

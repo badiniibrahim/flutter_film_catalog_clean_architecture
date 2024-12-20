@@ -19,13 +19,19 @@ class HomeView extends GetView<HomeController> {
         backgroundColor: AppColors.backgroundColor,
         title: const AppTitle(),
       ),
-      body: Column(
-        children: [
-          CategorySection(controller: controller),
-          const SizedBox(height: 10),
-          PlayingNowSection(controller: controller),
-        ],
-      ),
+      body: Obx(() {
+        if (controller.state.isLoading) {
+          return const Center(child: CircularProgressIndicator());
+        } else {
+          return Column(
+            children: [
+              CategorySection(controller: controller),
+              const SizedBox(height: 10),
+              PlayingNowSection(controller: controller),
+            ],
+          );
+        }
+      }),
     );
   }
 }
