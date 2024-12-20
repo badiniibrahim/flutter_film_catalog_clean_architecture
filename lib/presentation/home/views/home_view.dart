@@ -135,13 +135,14 @@ class HomeView extends GetView<HomeController> {
                                               Row(
                                                 children: [
                                                   Icon(
-                                                    Icons.location_on_outlined,
+                                                    Icons
+                                                        .calendar_view_week_sharp,
                                                     color: Colors.blue[300],
                                                     size: 14,
                                                   ),
                                                   Flexible(
                                                     child: Text(
-                                                      "travel.location!",
+                                                      movie.releaseDate!,
                                                       overflow:
                                                           TextOverflow.ellipsis,
                                                       style: TextStyle(
@@ -161,8 +162,7 @@ class HomeView extends GetView<HomeController> {
                                                       TextSpan(
                                                         children: [
                                                           TextSpan(
-                                                            text:
-                                                                "\$${"travel.price"} /",
+                                                            text: "Vote Count ",
                                                             style: TextStyle(
                                                               fontSize: 14,
                                                               fontFamily:
@@ -174,7 +174,8 @@ class HomeView extends GetView<HomeController> {
                                                             ),
                                                           ),
                                                           TextSpan(
-                                                            text: "Person",
+                                                            text:
+                                                                "${movie.voteCount}",
                                                             style: TextStyle(
                                                               fontSize: 14,
                                                               fontFamily:
