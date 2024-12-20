@@ -12,25 +12,20 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<HomeController>(
-      init: HomeController(Get.find(), Get.find(), Get.find()),
-      builder: (_) {
-        return Scaffold(
-          backgroundColor: AppColors.backgroundColor,
-          appBar: AppBar(
-            centerTitle: false,
-            backgroundColor: AppColors.backgroundColor,
-            title: const AppTitle(),
-          ),
-          body: Column(
-            children: [
-              CategorySection(controller: controller),
-              const SizedBox(height: 10),
-              PlayingNowSection(controller: controller),
-            ],
-          ),
-        );
-      },
+    return Scaffold(
+      backgroundColor: AppColors.backgroundColor,
+      appBar: AppBar(
+        centerTitle: false,
+        backgroundColor: AppColors.backgroundColor,
+        title: const AppTitle(),
+      ),
+      body: Column(
+        children: [
+          CategorySection(controller: controller),
+          const SizedBox(height: 10),
+          PlayingNowSection(controller: controller),
+        ],
+      ),
     );
   }
 }
